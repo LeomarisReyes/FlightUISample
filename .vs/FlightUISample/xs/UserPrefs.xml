@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{45AD3B49-0D4C-48B5-9CFD-EE606023B3AD}|Default">
+  <MonoDevelop.Ide.ItemProperties.FlightUISample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.19246DB7-ED17-4769-94AD-22BF5FA8FA24" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlightUISample/Views/FlightPage.xaml">
+    <Files>
+      <File FileName="FlightUISample/Models/Passenger.cs" Line="7" Column="23" />
+      <File FileName="FlightUISample/Models/Flight.cs" />
+      <File FileName="FlightUISample/ViewModels/FlightViewModel.cs" />
+      <File FileName="FlightUISample/Views/FlightPage.xaml" Line="5" Column="37" />
+      <File FileName="FlightUISample/Views/FlightPage.xaml.cs" />
+      <File FileName="FlightUISample/App.xaml.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FlightUISample" expanded="True" selected="True">
+            <Node name="FlightUISample" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="FlightUISample.Android" expanded="True">
+              <Node name="References" expanded="True" />
+            </Node>
+            <Node name="FlightUISample.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FlightUISample.Android FirstBuild="True" PreferredExecutionTarget="Android.1115fba155480902" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
