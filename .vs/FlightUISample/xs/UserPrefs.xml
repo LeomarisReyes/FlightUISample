@@ -5,31 +5,30 @@
       <File FileName="FlightUISample/Models/Passenger.cs" Line="7" Column="23" />
       <File FileName="FlightUISample/Models/Flight.cs" />
       <File FileName="FlightUISample/ViewModels/FlightViewModel.cs" />
-      <File FileName="FlightUISample/Views/FlightPage.xaml" Line="5" Column="37" />
+      <File FileName="FlightUISample/Views/FlightPage.xaml" Line="140" Column="222" />
       <File FileName="FlightUISample/Views/FlightPage.xaml.cs" />
       <File FileName="FlightUISample/App.xaml.cs" />
+      <File FileName="FlightUISample.Android/MainActivity.cs" />
+      <File FileName="FlightUISample.iOS/AppDelegate.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FlightUISample" expanded="True" selected="True">
             <Node name="FlightUISample" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True" />
-              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="FlightUISample.Android" expanded="True">
-              <Node name="References" expanded="True" />
+            <Node name="FlightUISample.iOS" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="Resources" expanded="True" />
             </Node>
-            <Node name="FlightUISample.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.FlightUISample.Android FirstBuild="True" PreferredExecutionTarget="Android.1115fba155480902" />
+  <MonoDevelop.Ide.ItemProperties.FlightUISample.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

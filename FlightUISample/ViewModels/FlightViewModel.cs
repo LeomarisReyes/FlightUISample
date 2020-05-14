@@ -29,10 +29,10 @@ namespace FlightUISample.ViewModels
                     {
                         new Passenger
                         {
-                            Name = "Leo R.",
+                            Name = "Leomaris R.",
                             Email = "leoreyes@hotmail.com",
                             Seat="17-C",
-                            Picture="LeoR",
+                            Picture="LeoR.jpg",
                             IsConfirmed = false
                         },
                         new Passenger
@@ -40,7 +40,7 @@ namespace FlightUISample.ViewModels
                             Name = "Victor R.",
                             Email = "victorr@hotmail.com",
                             Seat="16-A",
-                            Picture="VictorR",
+                            Picture="VictorR.jpg",
                             IsConfirmed = true
                         }
                     }
@@ -61,10 +61,10 @@ namespace FlightUISample.ViewModels
                     {
                         new Passenger
                         {
-                            Name = "Jessie L.",
-                            Email = "jessie@hotmail.com",
+                            Name = "Mary R.",
+                            Email = "maryr@hotmail.com",
                             Seat="17-B",
-                            Picture="JessieL",
+                            Picture="MaryR.jpeg",
                             IsConfirmed = true
                         }
                     }

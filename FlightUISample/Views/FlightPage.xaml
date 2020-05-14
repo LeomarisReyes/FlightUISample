@@ -1,12 +1,160 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
              xmlns:local="clr-namespace:FlightUISample"
              x:Class="FlightUISample.Views.FlightPage">
     <ContentPage.BindingContext>
         <local:ViewModels.FlightViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-         <!-- Your UI development will be here-->
+        <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+               <!-- 1. Main Wall-->
+
+                 <!-- Blue box-->
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#0e3097" HeightRequest="260"/>
+
+                <!-- 2. Gradient  background-->
+                <CollectionView  x:Name="Colec" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,-190,0,0"  HorizontalOptions="FillAndExpand"  HorizontalScrollBarVisibility="Never"
+                                        ItemsSource="{Binding flight}"
+                                        VerticalOptions="CenterAndExpand"
+                                        ItemsLayout="HorizontalList"  
+                                        HeightRequest="630">
+                                        <CollectionView.ItemTemplate> 
+                                            <DataTemplate> 
+                                                  <!--3. Flight informacion-->
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <StackLayout Grid.Row="0">
+                                                               <PanCake:PancakeView BackgroundGradientStartColor="#4b68b4" BackgroundGradientEndColor="White" CornerRadius="20,20,0,0" IsClippedToBounds="true" HeightRequest="270" Margin="25,0,25,0"/>
+                                                               <PanCake:PancakeView BackgroundGradientStartColor="White" BackgroundGradientEndColor="#f3f3f3" CornerRadius="0,0,20,20" IsClippedToBounds="true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="25,0"/>
+
+                                                    </StackLayout>
+                                                    
+                                                     <Grid Grid.Row="0" Padding="50,30,50,10">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="Auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                 
+                                                          <!--3. Flight information (Part1) : From details-->
+                                                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding From}" FontSize="35" TextColor="White"/>
+                                                         <Label Grid.Row="1" Grid.Column="0" Text="{Binding FromDate}" FontSize="15" TextColor="White"/>
+                                                          <!--3. Flight information (Part1): Arrow  separator-->
+                                                         <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="Arrow" VerticalOptions="Center"/>
+                                                          <!--3. Flight information (Part1): To details-->
+                                                         <Label Grid.Row="0" Grid.Column="3" Text="{Binding To}" FontSize="35" TextColor="White"/>
+                                                         <Label Grid.Row="1" Grid.Column="3" Text="{Binding ToDate}" FontSize="15" TextColor="White"/>
+                                                          <!--3. Flight information (Part1): Airplane image-->
+                                                         <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Source="Airplane" WidthRequest="300" HeightRequest="160"/>
+
+                                                          <!--4. Flight information (Part2)-->
+
+                                                          <!--4. Flight information (Part2) Fligth number-->
+                                                         <Label Grid.Row="3" Grid.Column="0" Text="Flight" FontSize="17" TextColor="Silver"/>
+                                                         <Label Grid.Row="4" Grid.Column="0" Text="{Binding Number}" FontSize="16"/>
+
+                                                         <!--4. Flight information (Part2): Class type--> 
+                                                         <Label Grid.Row="3" Grid.Column="1" Text="Class" FontSize="17" TextColor="Silver"/>
+                                                         <Label Grid.Row="4" Grid.Column="1" Text="{Binding ClassType}" FontSize="16"/>
+
+                                                         <!--4. Flight information (Part2): Boarding--> 
+                                                         <Label Grid.Row="3" Grid.Column="2" Text="Boarding" FontSize="17" TextColor="Silver"/>
+                                                         <Label Grid.Row="4" Grid.Column="2" Text="{Binding Boarding}" FontSize="16"/>
+
+                                                          <!--4. Flight information (Part2): Terminal--> 
+                                                         <Label Grid.Row="3" Grid.Column="3" Text="Terminal" FontSize="17" TextColor="Silver"/>
+                                                         <Label Grid.Row="4" Grid.Column="3" Text="{Binding Terminal}" FontSize="16"/>
+
+
+                                                          <!--5. Passengers--> 
+                                                         <CollectionView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Transparent" Margin="0,60,0,20" WidthRequest="100"
+                                                            ItemsSource="{Binding passenger}" 
+                                                            VerticalScrollBarVisibility="Never" 
+                                                            HeightRequest="140">
+                                                            <CollectionView.ItemTemplate> 
+                                                               <DataTemplate>
+                                                                   <Grid HeightRequest="78">
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="*"/>
+                                                                            <ColumnDefinition Width="Auto"/>
+                                                                            <ColumnDefinition Width="Auto"/>
+                                                                            <ColumnDefinition Width="25"/> 
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="Auto"/>
+                                                                             <RowDefinition Height="Auto"/>
+                                                                        </Grid.RowDefinitions>
+                                                                       <!--5. Passengers: Name--> 
+                                                                       <Label Grid.Column="0" Grid.Row="0" Text="{Binding Name}" FontSize="20" TextColor="Black"/>
+                                                                       <!--5. Passengers: Email--> 
+                                                                       <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Email}" FontSize="{OnPlatform iOS='18', Android='15'}" TextColor="Silver"/>
+                                                                       <!--5. Passengers: Seat--> 
+                                                                       <Button Grid.Column="1" Text="{Binding Seat}" TextColor="White" CornerRadius="12" WidthRequest="50" HeightRequest="23" Padding="{OnPlatform Android='0,4'}" FontSize="{OnPlatform iOS='15',Android='10'}" FontAttributes="Bold" BackgroundColor="#92d5fe"/>
+                                                                       <!--5. Passengers: Rounded Picture--> 
+                                                                       <PanCake:PancakeView Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" CornerRadius="30" HeightRequest="60" Margin="0,2">
+                                                                            <Image  Source="{Binding Picture}" />
+                                                                        </PanCake:PancakeView>
+                                                                       <!--5. Passengers: Confirmationstatus--> 
+                                                                       <CheckBox Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" IsChecked="{Binding IsConfirmed}" IsEnabled="False" Color="#44d7b9"  HeightRequest="25" TranslationY="-17" TranslationX="-18"/>
+                                                           
+                                                                   </Grid>  
+                                                                </DataTemplate>
+                                                             </CollectionView.ItemTemplate>
+                                                        </CollectionView>
+
+                                                         <!--6. Payment information-->
+
+                                                         <!--6. Payment information: Total-->
+                                                        <Label Grid.Row="6" Grid.Column="0" Text="Total you'll pay" FontSize="16" TextColor="Silver"/>
+                                                        <Label Grid.Row="7" Grid.Column="0" Text="{Binding Total}" VerticalOptions="Start" FontSize="22" FontAttributes="Bold"/>
+                                                         <!--6. Payment information: Spit payment status-->
+                                                        <CheckBox Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Margin="20,0,0,0" HorizontalOptions="End" IsEnabled="False" IsChecked="True" Color="#90d0fa"/>
+                                                        <Label Grid.Row="6" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand" Text="Split payment" FontSize="19" FontAttributes="Bold"/>
+                                             
+
+                                                        
+                                                     </Grid>
+                                                  
+                                               </Grid>
+
+                                            </DataTemplate>
+                                         </CollectionView.ItemTemplate>
+                  </CollectionView>
+                <!-- Footer bar-->
+                <Image Grid.Row="2" Grid.Column="0" Source="Keyboard" WidthRequest="30" Margin="20,0,0,30"/> 
+                       <PanCake:PancakeView Grid.Row="2" Grid.Column="1" BackgroundGradientStartColor="#6988f5" BackgroundGradientEndColor="#55a0f3" CornerRadius="28" HorizontalOptions="CenterAndExpand" Margin="0,0,0,30">
+                                    <Button  Text="Book Flight" FontSize="20" FontAttributes="Bold" BackgroundColor="Transparent" HeightRequest="55" TextColor="White" WidthRequest="200"/>
+                        </PanCake:PancakeView>
+                <Image Grid.Row="2" Grid.Column="2" Source="Microphone" WidthRequest="30" Margin="0,0,20,30"/> 
+        </Grid>
+       </ScrollView>
     </ContentPage.Content>
 </ContentPage>
